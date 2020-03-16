@@ -1,8 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import useAsyncEffect from "./utils/useAsyncEffect";
+import fetch from "./utils/fetch";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const [message, setMessage] = useState("");
+
+  useAsyncEffect(async () => {
+    const data = await fetch("/graphql");
+    setMessage(data.message);
+  }, [setMessage]);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +25,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {message}
         </a>
       </header>
     </div>
