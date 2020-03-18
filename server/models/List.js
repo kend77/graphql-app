@@ -1,10 +1,10 @@
-import Sequelize from "sequelize";
-import db from "../db";
-const List = db.define("list", {
+import Sequelize from 'sequelize'
+import db from './db'
+const List = db.define('list', {
   title: {
     type: Sequelize.STRING,
-    allowNull: false
-  }
-});
+    allowNull: false,
+  },
+})
 
-export default List;
+export default List

@@ -1,5 +1,5 @@
 import Sequelize from "sequelize";
-import db from "../db";
+import db from "./db";
 
 export default db.define("card", {
   title: {

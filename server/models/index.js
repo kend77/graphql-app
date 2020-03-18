@@ -1,2 +1,9 @@
-export { default as List } from "./List";
-export { default as Card } from "./Card";
+import db from './db'
+import List from './List'
+import Card from './Card'
+
+List.hasMany(Card)
+
+export { List, Card }
+
+export default db
